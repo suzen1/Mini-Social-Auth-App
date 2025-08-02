@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+      <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+</style>
+</head>
+<body>
+  <div class="main  w-full min-h-screen  bg-zinc-800 text-white flex flex-col  font-[Inter] p-4 ">
+    <div class="logout flex justify-end w-full " >
+    <a href="/logout" class="bg-red-500 text-white p-2 rounded w-[7vw] text-[1.2vw]  cursor-pointer hover:bg-red-600 flex justify-center items-center transition duration-300 "> LogOut</a>
+    </div>
+    <h1 class="text-[1.8vw] mb-2"> Hello! <%= user.username %> </h1>
+    <div class="content flex flex-col w-full border border-gray-300 p-4 rounded-lg bg-gray-900 shadow-lg gap-1 ">
+        <h3 class="text-[1.6vw] ">Write Your Post</h3>
+        <form action="/post" method="post" class="w-full flex flex-col ">
+            <input type="text" placeholder="Enter your post" class="border border-gray-300 p-2 rounded  text-black mb-4 w-full" name="contant">
+            <button type="submit" class="bg-green-500 text-white p-2 rounded w-[9vw]  cursor-pointer hover:bg-green-600 transition duration-300 ">Post</button>
+        </form>
+    </div>
+    <div class="posts mt-4 ">
+        <h1 class="mb-2 text-[1.5vw]">Your Post</h1>
+        <% user.posts.forEach(function(post) { %>
+        <div class="post border border-gray-300 p-4 rounded-lg bg-gray-900 shadow-lg mb-4">
+            <h2><%= user.username %></h2>
+            <p><%= post.contant %></p>
+            <div class="btn flex items-center justify-between mt-4">
+                <form action="/like/<%= post._id %>" method="post">
+                    <button type="submit" class="bg-blue-500 text-white p-2 rounded cursor-pointer hover:bg-blue-600 transition duration-300">Like</button>
+                </form>
+               <a href="/update/<%= post._id %>" class="bg-yellow-700 text-white p-2 rounded cursor-pointer hover:bg-yellow-800 transition duration-300">
+                Update
+               </a>
+            </div>
+        </div>
+        <% }) %>
+
+         
+
+     
+    </div>
+    
+    </div>
+</body>
+</html>

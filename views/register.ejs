@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+     <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+</style>
+</head>
+<body>
+    <div class="main w-full h-screen bg-zinc-800 text-white flex items-center justify-center font-[Inter] ">
+<form action="/register" method="post" class=" gap-1 flex flex-col items-center justify-center w-96  mx-auto bg-gray-900 rounded-lg shadow-lg p-8">
+    <h1>Create Your Account</h1>
+    <input type="text" placeholder="Enter your Username" class="border border-gray-300 p-2 rounded w-full mb-4" name="username">
+    <input type="email" placeholder="Enter your Email" class="border border-gray-300 p-2 rounded w-full mb-4" name="email">
+    <input type="password" placeholder="Enter your password" class="border border-gray-300 p-2 rounded w-full mb-4" name="password">
+    <div class="btn flex items-center justify-between w-full">
+<button type="submit" class="bg-green-500 text-white p-2 rounded w-[9vw]  cursor-pointer hover:bg-green-600 transition duration-300 " >Create</button>
+        <a href="/login" class="bg-blue-500 text-white p-2 rounded w-[9vw]  flex justify-center items-center cursor-pointer hover:bg-blue-600 transition duration-300 " >Login </a> 
+    </div>
+</form>
+    </div>
+</body>
+</html>
